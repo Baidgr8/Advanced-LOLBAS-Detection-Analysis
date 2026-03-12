@@ -115,19 +115,20 @@ This demonstrates how attackers abuse **signed Microsoft binaries** to bypass tr
 After downloading the payload, I simulated persistence by modifying:
 
 path: HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run
+- powershell command
+  
+       New-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Run" -Name "SecurityUpdate" -Value "$env:TEMP\malicious_script.ps1" -PropertyType "String" -Force
 
-A new registry value named:
+- DOS command
+  
+      reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run" /v SecurityUpdate /t REG_SZ /d "C:\Users\%USERNAME%\AppData\Local\Temp\malicious_script.ps1" /f
 
-SecurityUpdate
-
-
-was created to ensure the payload executes whenever the user logs in.
-
+A new registry value named: SecurityUpdate was created to ensure the payload executes whenever the user logs in.
 This technique is commonly used by malware to maintain persistence.
 
-### Screenshot – Registry Persistence
+#### Registry Persistence
 
-INSERT SCREENSHOT HERE
+![Process Tree Analysis](https://github.com/Baidgr8/Advanced-LOLBAS-Detection-Analysis/blob/386f92afa5b144bf1eaf40eaadef980f312275f1/screenshot/security%20update%20entry.PNG)
 
 *(Regedit window showing SecurityUpdate value in Run key)*
 
@@ -141,7 +142,7 @@ The Windows Sandbox environment did **not contain Sysmon**, and default Windows 
 
 To improve logging visibility, I enabled advanced auditing using:
 
-auditpol
+         auditpol /set /subcategory:"Process Creation" /success:enable /failure:enable
 
 
 Despite enabling auditing, the execution of `certutil.exe` was not consistently logged.
@@ -159,7 +160,7 @@ Due to missing telemetry, I pivoted to alternative evidence sources:
 
 Using PowerShell:
 
-(Get-PSReadlineOption).HistorySavePath
+     (Get-PSReadlineOption).HistorySavePath
 
 
 I located the **PowerShell history file**, which contained the executed certutil command.

@@ -192,7 +192,7 @@ This demonstrates how investigators can recover evidence **even when primary tel
 
 ### Screenshot – PowerShell History Artifact
 
-INSERT SCREENSHOT HERE
+![Process Tree Analysis](https://github.com/Baidgr8/Advanced-LOLBAS-Detection-Analysis/blob/68d4b2d357b408dbdda176f07e8d60ce0451a446/screenshot/Certutil.PNG)
 
 *(Terminal output displaying command history location)*
 
@@ -202,7 +202,7 @@ INSERT SCREENSHOT HERE
 
 ### Process Tree
 
-'PowerShell → certutil.exe → downloaded payload → registry modification'
+ 'PowerShell' → 'certutil.exe' → 'downloaded payload' → 'registry modification'
 
 Explanation:
 

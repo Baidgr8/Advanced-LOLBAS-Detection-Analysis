@@ -201,7 +201,7 @@ This demonstrates how investigators can recover evidence **even when primary tel
 
 ### Process Tree
 
-### `PowerShell`  →  `certutil.exe`  →  `downloaded payload`  →  `registry modification`
+#### `PowerShell`  →  `certutil.exe`  →  `downloaded payload`  →  `registry modification`
 
 Explanation:
 

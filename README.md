@@ -107,6 +107,7 @@ This demonstrates how attackers abuse **signed Microsoft binaries** to bypass tr
 
 *(PowerShell terminal showing the certutil.exe command execution)*
 
+
 ---
 
 ## Phase 2 – Persistence via Registry Run Keys  
@@ -165,9 +166,9 @@ Using PowerShell:
 
 I located the **PowerShell history file**, which contained the executed certutil command.
 
-### Screenshot – Event Log / Artifact Evidence
+### Event Log / Artifact Evidence
 
-INSERT SCREENSHOT HERE
+
 
 *(Output highlighting certutil execution evidence)*
 
@@ -201,7 +202,7 @@ INSERT SCREENSHOT HERE
 
 ### Process Tree
 
-PowerShell → certutil.exe → downloaded payload → registry modification
+'PowerShell → certutil.exe → downloaded payload → registry modification'
 
 Explanation:
 

@@ -183,8 +183,7 @@ ConsoleHost_history.txt
 
 Using:
 
-
-   type (Get-PSReadlineOption).HistorySavePath | Select-String "certutil"
+       type (Get-PSReadlineOption).HistorySavePath | Select-String "certutil"
 
 I retrieved the history file and confirmed the execution timeline of attacker commands.
 
@@ -196,6 +195,7 @@ This demonstrates how investigators can recover evidence **even when primary tel
 
 *(Terminal output displaying command history location)*
 
+   Get-WinEvent -FilterHashtable @{LogName= 'Security' ID=4688} | Where-Object {$_.Message -like "*certutil*"} | Select-Object TimeCreated, Message | Format-List
 ---
 
 # Evidence
@@ -210,10 +210,6 @@ Explanation:
 - certutil downloaded the remote payload
 - payload saved locally
 - registry run key created for persistence
-
-### Screenshot – Process Tree
-
-INSERT SCREENSHOT HERE
 
 ---
 

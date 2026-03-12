@@ -189,14 +189,13 @@ I retrieved the history file and confirmed the execution timeline of attacker co
 
 This demonstrates how investigators can recover evidence **even when primary telemetry is incomplete.**
 
-### Screenshot – PowerShell History Artifact
+### PowerShell History Artifact
 
 ![Process Tree Analysis](https://github.com/Baidgr8/Advanced-LOLBAS-Detection-Analysis/blob/68d4b2d357b408dbdda176f07e8d60ce0451a446/screenshot/Certutil.PNG)
 
 *(Terminal output displaying command history location)*
 
-   Get-WinEvent -FilterHashtable @{LogName= 'Security' ID=4688} | Where-Object {$_.Message -like "*certutil*"} | Select-Object TimeCreated, Message | Format-List
----
+     Get-WinEvent -FilterHashtable @{LogName= 'Security' ID=4688} | Where-Object {$_.Message -like "*certutil*"} | Select-Object TimeCreated, Message | Format-List
 
 # Evidence
 

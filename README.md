@@ -161,7 +161,7 @@ Due to missing telemetry, I pivoted to alternative evidence sources:
 
 Using PowerShell:
 
-     (Get-PSReadlineOption).HistorySavePath
+    type (Get-PSReadlineOption).HistorySavePath | Select-String "certutil"
 
 
 I located the **PowerShell history file**, which contained the executed certutil command.

@@ -161,14 +161,14 @@ Due to missing telemetry, I pivoted to alternative evidence sources:
 
 Using PowerShell:
 
-    type (Get-PSReadlineOption).HistorySavePath | Select-String "certutil"
+     (Get-PSReadlineOption).HistorySavePath 
 
 
 I located the **PowerShell history file**, which contained the executed certutil command.
 
 ### Event Log / Artifact Evidence
 
-
+![Process Tree Analysis](https://github.com/Baidgr8/Advanced-LOLBAS-Detection-Analysis/blob/0e431cdc34ad9f9ab6691fafac1c2a228beb5060/screenshot/Console%20history%20forensic.PNG)
 
 *(Output highlighting certutil execution evidence)*
 
@@ -183,8 +183,8 @@ ConsoleHost_history.txt
 
 Using:
 
-(Get-PSReadlineOption).HistorySavePath
 
+   type (Get-PSReadlineOption).HistorySavePath | Select-String "certutil"
 
 I retrieved the history file and confirmed the execution timeline of attacker commands.
 

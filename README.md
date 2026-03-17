@@ -227,10 +227,10 @@ Explanation:
 
 | Tactic | Technique | ID |
 |------|------|------|
-| Command & Control | Ingress Tool Transfer | T1105 |
-| Persistence | Registry Run Keys | T1547.001 |
-| Execution | Command and Scripting Interpreter (PowerShell) | T1059.001 |
-| Defense Evasion | Living-off-the-Land Binary (Certutil) | T1218 |
+| Command & Control | Ingress Tool Transfer |<a href="https://attack.mitre.org/techniques/T1105/"> T1105 </a> |
+| Persistence | Registry Run Keys |<a href="https://attack.mitre.org/techniques/T1547/001/"> T1547.001</a> |
+| Execution | Command and Scripting Interpreter (PowerShell) | <a href="https://attack.mitre.org/techniques/T1059/001/">T1059.001</a> |
+| Defense Evasion | Living-off-the-Land Binary (Certutil) |<a href="https://attack.mitre.org/techniques/T1218/"> T1218 </a> |
 
 ---
 
